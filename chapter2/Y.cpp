@@ -4,9 +4,9 @@ using namespace std;
 int main() {
 
 	// Binary
-	cout << 0b01011001 << endl << char (0b01011001);
+	cout << 0b01011001 << " ";
+	cout << char (0b01011001) << endl;
 	
-
 	// Octal
 	cout << 0131 << " ";
 	cout << char(0131) << endl;
