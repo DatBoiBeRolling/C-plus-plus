@@ -1,2 +1,6 @@
-# chapter1
-The introduction to a long journey on c++
+# Introduction
+This is my coding journey for c++! 
+## Chapter 1
+ooooooooo
+## Chapter 2
+aaaaaaaaaaa
