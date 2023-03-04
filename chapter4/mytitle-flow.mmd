@@ -4,7 +4,6 @@ flowchart TD
 	mystart --> input{string}
 	input --> charFlag1[character is space, punctuation, or digit]
 	charFlag1 <--> |true| res1[skip to next character]
-	charFlag1 --> charFlag2
-	charFlag2 --> |false| res2[char1 = alpha -> change uppercase]
+	charFlag1 --> |false| res2[char1 = alpha -> change uppercase]
 	res2 --> out1[output changed character, go to next letter in orignal string]
 	
