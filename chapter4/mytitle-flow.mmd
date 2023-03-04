@@ -1,0 +1,11 @@
+flowchart TD
+
+	mystart[start]
+	mystart -> input{string}
+	input -> charFlag{character is space, punctuation, or digit}
+	charFlag --> |true| res1[skip]
+	charFlag --> |false| res2{char1 = alpha -> change uppercase}
+	charFlag --> charNew{scan for new word}
+	charNew --> |new word| res3{Test for flag}
+	res3 --> charFlag
+	charNew --> |change finished| end{Output changed string}
