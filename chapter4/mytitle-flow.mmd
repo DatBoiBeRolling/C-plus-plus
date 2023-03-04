@@ -1,7 +1,7 @@
 flowchart TD
 
 	mystart[start]
-	mystart --> input{input string, newWord boolean = true}
+	mystart --> input[input string, newWord boolean = true]
 	input --> charFlag1{character is space, punctuation, or digit}
 	charFlag1 <--> |true| res1[skip to next character, newWord boolean = true]
 	charFlag1 --> |false| res2{character is a letter -> change uppercase, newWord = false}
