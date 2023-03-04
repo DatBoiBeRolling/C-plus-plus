@@ -15,7 +15,7 @@ int main() {
             x = toupper(x);
             newWord = false;
         }
-        else if (isspace(x) || ispunct(x) || isdigit(x)) {
+        else if (isspace(x)) {
             newWord = true;
         }
     }
