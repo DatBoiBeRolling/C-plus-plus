@@ -2,10 +2,9 @@ flowchart TD
 
 	mystart[start]
 	mystart --> input{string}
-	input --> charFlag[character is space, punctuation, or digit]
-	charFlag <--> |true| res1[skip to next character]
-	charFlag --> |false| res2[char1 = alpha -> change uppercase]
-	charFlag --> charNew[scan for new word]
-	charNew --> |new word| res3[Test for flag]
+	input --> charFlag1[character is space, punctuation, or digit]
+	charFlag2 <--> |true| res1[skip to next character]
+	charFlag3 --> |false| res2[char1 = alpha -> change uppercase]
+	charFlag3 --> charNew[scan for new word]
 	res3 --> charFlag
 	charNew --> |change finished| end1[Output changed string]
