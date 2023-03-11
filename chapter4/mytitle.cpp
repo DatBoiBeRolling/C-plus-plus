@@ -1,23 +1,36 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <cctype>
 using namespace std;
 
 int main() {
     string input;
+    string output = "";
     cout << "Enter a string: "; // Input
     getline(cin, input);
     
 	bool newWord = true; // Flag
 
-    for (char& x: input) {
-        if (newWord && isalpha(x)) {
-            x = toupper(x);
+    for (int i = 0; i <= input.length(); i++)
+    {
+        if (newWord && isalpha(input[i]))
+     {
+            toupper(input[i]);
+            output += input[i];
             newWord = false;
-        }
-        else if (isspace(x)) {
-            newWord = true;
-        }
+     }
+        else if (ispunct(input[i]) || isdigit(input[i]))
+     {
+         output += " ";
+          newWord = false;
+      }
+
+      if (isspace(input[i-1]))
+      {
+          output += " ";
+          newWord = true;
+     }
     }
-    cout << "Converted string: " << input << endl;
+
+    cout << "Converted string: " << output << endl;
 }
