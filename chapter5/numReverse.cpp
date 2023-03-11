@@ -4,9 +4,8 @@ using namespace std;
 
 int main()
 {
-	int input1;
-	string input2;
-	string output;
+	int input1, inpL;
+	string input2, output;
 	cout << "Enter a positive integer: ";
 	cin >> input1;
 
@@ -17,10 +16,12 @@ int main()
 	}
 
 	input2 = to_string(input1);
+	inpL = input2.length();
 
-	for (int i = input2.length(); i >= 0; i--)
+	while (inpL>=0)
 	{
-		output += input2[i];
+		output += input2[inpL];
+		inpL--;
 	}
 
 	cout << output << endl;
