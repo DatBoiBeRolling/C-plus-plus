@@ -1,0 +1,11 @@
+flowchart TD
+
+	mystart[input number]
+	mystart --> input{number > 0}
+	input <--> |false| case1[ask for number again]
+	input --> |true| case2[turn into string and get string length stored in inpL using string length method]
+	case2 --> case3{while input length or inpL > 0}
+    case3 --> |true| output1[output new backmost number using character in input at inpL]
+	output1 --> change1[inpL-- to get the numbers from right to left]
+	change1 --> case3
+	case3 --> |false| finish1[code finished]
