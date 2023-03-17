@@ -11,12 +11,19 @@ int main()
 
    if (number1 < 0)
    {
+    number1 = 1;
     cout << "Enter another number: ";
     cin >> number1;
 
      if (number1 == 0)
      {
         exit(0);
+     }
+
+     while (number1 < 0)
+     {
+        cout << "Please enter a positive number! Try again: ";
+        cin >> number1;
      }
    }
 

@@ -1,0 +1,21 @@
+flowchart TD
+
+	mystart[input number]
+	mystart --> input{number > 0}
+    input --> |false| path1[ask for another number]
+    input --> |true| path2[number]
+    path1 --> check1{number == 0}
+    check1 --> output1[end program]
+    path1 <--> check2{number < 0}
+    path2 --> check3{number % 10 == 0}
+    check3 --> |true|zeros[# of zeros + 1]
+    check3 --> |false|check4{number % 10 > largest digit}
+    zeros --> check4
+    check4 --> |true|largest[largest = number % 10]
+    check4 --> |false|modifier[number/=10]
+    largest --> modifier
+    modifier --> path2
+
+
+
+	
