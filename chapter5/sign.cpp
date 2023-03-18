@@ -3,33 +3,27 @@ using namespace std;
 
 int main()
 {
-   int number1, number2, zeros;
-   int largest = 0;
+   int inpNum, zeros, largest = 0;
 
    cout << "Enter a number: ";
-   cin >> number1;
+   cin >> inpNum;
 
-   if (number1 < 0)
-   {
-    number1 = 1;
-    cout << "Enter another number: ";
-    cin >> number1;
-
-     if (number1 == 0)
-     {
-        exit(0);
-     }
-
-     while (number1 < 0)
+   while (inpNum < 0)
      {
         cout << "Please enter a positive number! Try again: ";
-        cin >> number1;
+        cin >> inpNum;
      }
-   }
 
-   while (number1 > 0) 
+     if (inpNum == 0)
+     {
+        cout << "Program exited...";
+        exit(0);
+     }
+     
+
+   while (inpNum > 0) 
    {
-      int digit = number1 % 10;
+      int digit = inpNum % 10;
       
       if (digit == 0)
       {
@@ -41,7 +35,7 @@ int main()
          largest = digit;
       }
 
-      number1 /= 10;
+      inpNum /= 10;
    }
 
    cout << "The amount of zeros are: " << zeros << endl;
