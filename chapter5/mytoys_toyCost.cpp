@@ -2,14 +2,23 @@
 #include <fstream>
 using namespace std;
 
-int mytoys()  
+int mytoys(string fileName)  
 {
    string toyNum;
    cout << "How many toys do you want to input?\n";
    getline(cin, toyNum);
    
-   ofstream outfile("mytoys.dat");
-   
+   ofstream outfile;
+   outfile.open(fileName);
+
+    if (outfile) {
+        cout << "File exists..." << endl;
+    }
+    else {
+        cout << "Error: could not open file... " << endl;
+        return 0;
+    }
+
    for (int i = 1; i <= stoi(toyNum); i++) {
       string toy, price;
       cout << "\nPlease input your toy name and amount:\n";
@@ -25,10 +34,18 @@ int mytoys()
    outfile.close();
 }
 
-int toyCost()
+int toyCost(string fileName)
 {
     ifstream infile;
-    infile.open("mytoys.dat");
+    infile.open(fileName);
+
+   if (infile) {
+        cout << "Data extracted successfully..." << endl;
+    }
+    else {
+        cout << "Error: could not open file... " << endl;
+        return 0;
+    }
 
     string toy;
     string amount;
@@ -53,8 +70,12 @@ int toyCost()
 
 int main()
 {
-    mytoys();
-    toyCost();
+    string fileName;
+    cout << "Enter the name of the file: ";
+    getline(cin, fileName);
+
+    mytoys("mytoys.dat");
+    toyCost("mytoys.dat");
 
     return 0;
 }
