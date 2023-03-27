@@ -23,7 +23,6 @@ int mytoys()
    }
    
    outfile.close();
-    
 }
 
 int toyCost()
@@ -50,8 +49,6 @@ int toyCost()
 
     cout << "\nTotal Toy's Price: $" << totalPrice << endl; 
     cout << "Total Toy's Amount: " << totalAmount << endl;
-
-    return 0;
 }
 
 int main()
