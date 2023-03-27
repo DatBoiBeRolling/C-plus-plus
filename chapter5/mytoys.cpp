@@ -1,27 +1,28 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <cstdlib>
 #include <ctime>
 using namespace std;
 
-int main()
-{
-    char toys[100];
-    int toyNum, price;
-    ofstream outfile;
+int main() {
+   string toyNum;
+   cout << "How many toys do you want to input?\n";
+   getline(cin, toyNum);
+   
+   ofstream outfile("mytoys.dat");
+   
+   for (int i = 1; i <= stoi(toyNum); i++) {
+      string toy, price;
+      cout << "\nPlease input your toy name and amount:\n";
+      getline(cin, toy);
 
-    outfile.open("mytoys.dat");
+      unsigned seed = time(0);
+      srand(seed);
+      price = " " + to_string(rand() % 100 + 1);
 
-    cout << "Writing to the file" << endl;
-    cout << "How many types of toys do you want to input? \n";
-    cin >> toyNum;
-
-    for (int i = 0; i < toyNum; i++)
-    {  
-        cout << "Please input your toy name and amount: ";
-        cin.getline(toys,100);
-        outfile << toys;
-        return 0;
-    }
-
+      outfile << toy << price << endl;
+   }
+   
+   outfile.close();
 }

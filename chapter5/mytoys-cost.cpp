@@ -1,24 +1,33 @@
 #include <iostream>
 #include <fstream>
+#include <string>
+
 using namespace std;
 
 int main()
 {
-    char data[100];
-
     ifstream infile;
-
     infile.open("mytoys.dat");
 
-    cout << "Reading from the file" << endl;
+    string toy;
+    string amount;
+    string price;
+    int totalAmount = 0;
+    int totalPrice = 0;
 
-    infile >> data;
-    cout << data << endl;
+    cout << "Your toy list:" << endl;
 
-    infile >> data;
-    cout << data << endl;
+    while (infile >> toy >> amount >> price)
+    {
+        cout << toy << " " << amount << " $" << price << endl;
+        totalPrice += stoi(amount) * stoi(price);
+        totalAmount += stoi(amount);
+    }
 
     infile.close();
+
+    cout << "\nTotal Toy's Price: $" << totalPrice << endl; 
+    cout << "Total Toy's Amount: " << totalAmount << endl;
 
     return 0;
 }
