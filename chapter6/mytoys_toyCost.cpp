@@ -33,6 +33,8 @@ int mytoys(string fileName)
    }
    
    outfile.close();
+
+   return true;
 }
 
 int toyCost(string fileName)
@@ -64,10 +66,13 @@ int toyCost(string fileName)
         totalAmount += stoi(amount);
     }
 
-    infile.close();
-
     cout << "\nTotal Toy's Price: $" << totalPrice << endl; 
     cout << "Total Toy's Amount: " << totalAmount << endl;
+    
+    infile.close();
+    
+    return true; 
+
 }
 
 int main()
