@@ -8,7 +8,7 @@ class ClassRoom{        // Classroom Class
     int capacity;
 
     public:
-    ClassRoom() {} // Mandatory default constructor
+    ClassRoom() {}                  // Mandatory default constructor
     ClassRoom(string rN, int c)     // Actual object constructor
     {
         roomNum = rN;
@@ -42,7 +42,7 @@ class Course {  // Course Class
     int score;
 
     public:
-    Course() {} // Mandatory default constructor
+    Course() {}                 // Mandatory default constructor
     Course(string N, int S)     // Actual object constructor
     {
         name = N;
@@ -78,8 +78,8 @@ class Student{      // Student Class
     Course course;
 
     public:
-    Student() {}    // Mandatory default constructor
-     Student(string N, int A, ClassRoom CR, Course C)       // Actual object constructor
+    Student() {}                                        // Mandatory default constructor
+     Student(string N, int A, ClassRoom CR, Course C)   // Actual object constructor
      {     
         name = N;
         age = A;
@@ -152,7 +152,7 @@ int main()  // Asks for all the information
     cin >> score;
     cout << "\n";
 
-    Course course (courseName, score);      // Creates course object using courseName and score
+    Course course (courseName, score);         // Creates course object using courseName and score
 
     cout << "ENTER STUDENT INFORMATION..." << endl;
     cout << "Student Name: ";
