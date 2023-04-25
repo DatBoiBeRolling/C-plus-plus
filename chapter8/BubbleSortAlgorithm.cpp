@@ -16,7 +16,7 @@ int main() {
   
   cout << "Here is the array in ascending order:\n";  
   
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {  // Ouputs new array
     cout << data[i] << " ";
   }
 
